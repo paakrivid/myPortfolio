@@ -9,7 +9,7 @@ import view from "./view.js";
 // 	module.hot.accept();
 // }
 
-console.log("Check from Controller");
+// console.log("Check from Controller");
 
 async function renderMap() {
 	try {
