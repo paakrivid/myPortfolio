@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		 <script type='module' defer src="./js/controller.js"></script>
+		 <!-- <script defer src="./js/model.js"></script> -->
+		<title>KrisPortfolio</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="box header">
+				<p class="headermsg">
+					Hello there, Welcome to my portfolio. I am a self-taught web-developer
+					and I aspire to become a full-stack web developer as well as a mobile
+					developer using React-Native. Please feel free to contact me for any
+					queries. Thank you.
+				</p>
+			</div>
+			<div class="box pdetails">
+				<section class="profilepic details-group">
+					<img src="./img/kris.jpg" alt="" />
+					<section class="personal-details">
+						<p class="name">Krishna Hari Pandey</p>
+						<section class="details">
+							<span class="material-icons icons"> house </span>
+							<span class="current-address">Victoria, Australia</span>
+						</section>
+						<section class="details">
+							<span class="material-icons icons"> email </span>
+							<span class="current-address">paakri.vid@gmail.com</span>
+						</section>
+						<section class="details">
+							<span class="material-icons icons"> call </span>
+							<span class="current-address">+61-0426******</span>
+						</section>
+					</section>
+				</section>
+				<section class="skills details-group">
+					<section class="skills-head">
+						<span class="material-icons icons"> computer </span>
+						<span>Skills</span>
+					</section>
+					<section class="skill-details">
+						<span class="skill-topics">Languages:</span>
+						<p class="skills-text">HTML, CSS, JavaScript, React</p>
+					</section>
+					<section class="skill-details">
+						<span class="skill-topics">Methodology:</span>
+						<p class="skills-text">Object Oriented Programming, MVC</p>
+					</section>
+					<section class="skill-details">
+						<span class="skill-topics">Tools:</span>
+						<p class="skills-text">GitHub, VS-Code, npm</p>
+					</section>
+					<section class="skill-details">
+						<span class="skill-topics">Current Learning:</span>
+						<p class="skills-text">React, Redux</p>
+					</section>
+					<section class="skill-details">
+						<span class="skill-topics">Future Target:</span>
+						<p class="skills-text">
+							Back-end: Node.js, Mobile-development: React-Native
+						</p>
+					</section>
+				</section>
+			</div>
+			<div class="box mainbody">
+				<div class="nav">
+					<nav>
+						<ul>
+							<a href="./index.html">Education</a>
+							<a href="#">Projects</a>
+							<a href="#">Experience</a>
+							<a href="#">Interest</a>
+							<a href="#">Roadmap</a>
+						</ul>
+					</nav>
+				</div>
+				<div class="maincontent">
+				<div class="education">
+					<p class="education-description">
+						I am a self-taught developer. I learn on my own using different
+						resources available in web mainly from the courses available in
+						UDEMY as well as from other open resources such as youTube,
+						stack-overflow, gitHub......
+						<br>
+						<br>
+						<hr>
+						<br>
+
+						<p class="education-description">Some of the courses that I have already completed are as follow are listed below:</p>
+						<br>
+					</p>
+					<h2>Udemy courses</h2>
+						<li>The Complete JavaScript Course 2021: From Zero to Expert</li>
+						<li>The Complete Web Developer in 2021: Zero to Mastery</li>
+						<li>Responsive Web Design - Build RWD Websites</li>
+						<li>CSS - Basicss To Advanced for Front End Development (2021)</li>
+						<li>How the Internet Works & the Web Development Process</li>
+					</div> 
+
+					<!-- <div class="projects">
+						<p class="projects-description">
+							I have worked in the projects from the udemy courses while following the course content. It has impart me a lots of knowledge and skills in using the languages to produce the projects of various ranges such as static webpages, dynamic weppages as well as user intractive web-apps.
+							<br />
+							<br />
+							I have started to work on some of my own projects. At present I am writing the user-stories for my own concept of projects involving food-industry.
+							<br />
+							<br />
+							<hr>
+							<br>
+							Once the projects progress-this section will be updated...
+						</p>
+					</div> -->
+
+				<!--<div class="experience">
+						<p class="experience-description">
+							I am in early phase of programming. I have now limited experience which came from the courses I have taken and the current personal projects that I am involved in.
+							<br />
+							<br />
+							With the time, I am determined to enhance my experience of programming through continouse learning and practice through various personal as well as open-source projects.
+							<br />
+							<br />
+							<hr>
+							<br>
+							This section will be updated soon...
+						</p>
+					</div> -->
+					<!-- <div class="interest">
+						<p class="interest-description">
+							I am interested in web-application as well as in mobile development. 
+							<br />
+							<br />
+							<hr>
+							<br>
+							This section will be updated soon...
+						</p>
+					</div> -->
+					<!-- <div class="roadmap">
+						<p class="roadmap-description">
+							My next step is learning React and Redux and rebuild my own projects in React.
+							<br />
+							<br />
+							<hr>
+							<br>
+							This section will be updated soon...
+						</p>
+					</div> -->
+				</div>
+			</div>
+			<div class="box map-div">
+				<div class="map">
+				<div class="map-kid map-display" id='mapid'>
+						
+					</div>
+				<div class="map-kid map-kid-text">
+					<p class="location-text">Displaying your address...</p>
+				</div>
+			</div>
+			</div>
+			<section class="box weatherTime-div">
+				<div class="weatherAndTime">
+					<div class="time wnt"></div>
+					<div class="location wnt">Location:</div>
+					<div class="currentWeather wnt">Current Weather:</div>
+					<div class="currentTemperature wnt">Current Temperature:</div>
+					<div class="fellsLike wnt">Fells like: </div>
+					<div class="windSpeed wnt">Wind Speed: </div>
+				</div>
+			</section>
+		</div> 
+		<footer>
+			<a href="#"
+				><img class="footer-icons" src="./img/fb-icon.png" alt=""
+			/></a>
+			<a href="#"
+				><img class="footer-icons" src="./img/linkedin.png" alt=""
+			/></a>
+			<a href="#"><img class="footer-icons" src="./img/gitHub.svg" alt="" /></a>
+
+			
+		</footer>
+	</body>
+</html>
