@@ -13,7 +13,7 @@ export function getPosition() {
 export const findAddress = async function (lat, long) {
 	try {
 		const myAdd = await fetch(
-			`https://api.positionstack.com/v1/reverse?access_key=e8e65c2f3cb2ca74bae61924ca7e641d&query=${lat},${long}&limit=1&output=json`
+			`http://api.positionstack.com/v1/reverse?access_key=e8e65c2f3cb2ca74bae61924ca7e641d&query=${lat},${long}&limit=1&output=json`
 		);
 
 		const data = await myAdd.json();
