@@ -13,15 +13,17 @@ export function getPosition() {
 export const findAddress = async function (lat, long) {
 	try {
 		const myAdd = await fetch(
-			`http://api.positionstack.com/v1/reverse?access_key=e8e65c2f3cb2ca74bae61924ca7e641d&query=${lat},${long}&limit=1&output=json`
+			//`http://api.positionstack.com/v1/reverse?access_key=e8e65c2f3cb2ca74bae61924ca7e641d&query=${lat},${long}&limit=1&output=json`
+			`https://eu1.locationiq.com/v1/reverse.php?key=pk.3cd98f4f1c0ee53894a4830079ec8ecf&lat=${lat}&lon=${long}&format=json`
 		);
 
 		const data = await myAdd.json();
-		// console.log(data);
-		const location = `${data.data[0].administrative_area}, ${data.data[0].region} ${data.data[0].postal_code}, ${data.data[0].country}`;
-		// console.log(location);
+		console.log(data);
+		// const location = `${data.data[0].administrative_area}, ${data.data[0].region} ${data.data[0].postal_code}, ${data.data[0].country}`;
+		const location = `${data.display_name}`;
+		console.log(location);
 
-		const { locality } = data.data[0];
+		const locality = data.address.city;
 		// console.log(locality);
 
 		return [locality, location];
