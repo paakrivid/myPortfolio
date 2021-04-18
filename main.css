@@ -112,7 +112,7 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-/* a:active {
+/* a:focus {
 	color: green;
 	background-color: greeen;
 } */
@@ -174,4 +174,10 @@ footer > a > img {
 	font-size: 1.5em;
 	color: var(--header-bg-color);
 	text-decoration: underline;
+}
+
+.active {
+	background-color: rgb(223, 215, 215);
+	color: black;
+	border: 3px solid var(--header-bg-color);
 }
