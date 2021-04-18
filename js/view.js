@@ -120,6 +120,16 @@ class View {
 						</p>
 					</div>`;
 	}
+
+	cssManipulater(clicked) {
+		//selecting the clicked element
+		const el = document.querySelector(`.${clicked}`);
+		// getting all the navlinks and removing active class in all
+		const navLinks = [...el.parentElement.children]; // getting parent el of clicked and again childrens of parent element, which return htmlcollection, ...spread operator then changes to the array of all child elements
+		navLinks.forEach((el) => el.classList.remove("active"));
+		// adding active class in clicked element
+		el.classList.add("active");
+	}
 }
 
 const view = new View();

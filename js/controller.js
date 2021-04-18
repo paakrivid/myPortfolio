@@ -48,6 +48,7 @@ document.querySelector(".nav").addEventListener("click", function (e) {
 	const clicked = e.target.className;
 	const mainContent = document.querySelector(".maincontent");
 	mainContent.innerHTML = view.renderMainContent(clicked);
+	view.cssManipulater(clicked);
 });
 
 function init() {
