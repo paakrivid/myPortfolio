@@ -1,6 +1,7 @@
 // controller importing from the model and view ------ following MVC pattern
 //import "/core-js/stable";
 //import "/regenerator-runtime/runtime"; // to polyfill async await
+//import { async } from "regenerator-runtime";
 
 import * as model from "./model.js";
 import view from "./view.js";
@@ -21,7 +22,10 @@ async function renderMap() {
 		view.renderMap(latitude, longitude, userAddress[0]);
 		view.renderAdressMarkup(userAddress[0]);
 
-		getWeather(latitude, longitude);
+		const weatherData = await model.getWeather(latitude, longitude);
+
+		view.paintWeatherDetails(weatherData, userAddress[1]);
+		// console.log(weatherData);
 		model.getTimeAndDay();
 	} catch (err) {
 		console.log(err);
@@ -33,26 +37,23 @@ function renderMapWithoutAddress() {
 	view.renderAdressMarkup("");
 }
 
-function init() {
-	if (!navigator.geolocation) renderMapWithoutAddress();
-	else renderMap();
-	keepPaintingTime();
-}
-
 function keepPaintingTime() {
 	view.paintTimeandDate(model.getTimeAndDay);
 	setTimeout(keepPaintingTime, 1000);
 }
 
-const getWeather = async function (lat, long) {
-	const weatherData = {};
-	const rawData = await fetch(
-		`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=963a52e09ec19ed6b5f8d2f2226bab2f`
-	);
-	const weatherRaw = await rawData.json();
-	// console.log(weatherRaw);
-	const location = weatherRaw;
-	// console.log(weatherData);
-};
+function addEventHandler() {}
+document.querySelector(".nav").addEventListener("click", function (e) {
+	e.preventDefault();
+	const clicked = e.target.className;
+	const mainContent = document.querySelector(".maincontent");
+	mainContent.innerHTML = view.renderMainContent(clicked);
+});
 
+function init() {
+	if (!navigator.geolocation) renderMapWithoutAddress();
+	else renderMap();
+	keepPaintingTime();
+	addEventHandler();
+}
 init();

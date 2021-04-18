@@ -78,11 +78,11 @@
 				<div class="nav">
 					<nav>
 						<ul>
-							<a href="./index.html">Education</a>
-							<a href="#">Projects</a>
-							<a href="#">Experience</a>
-							<a href="#">Interest</a>
-							<a href="#">Roadmap</a>
+							<a class='edu' href="./index.html">Education</a>
+							<a class='prj' href="#">Projects</a>
+							<a class='exp' href="#">Experience</a>
+							<a class='int' href="#">Interest</a>
+							<a class='rdm' href="#">Roadmap</a>
 						</ul>
 					</nav>
 				</div>
@@ -106,7 +106,7 @@
 						<li>The Complete Web Developer in 2021: Zero to Mastery</li>
 						<li>Responsive Web Design - Build RWD Websites</li>
 						<li>CSS - Basicss To Advanced for Front End Development (2021)</li>
-						<li>How the Internet Works & the Web Development Process</li>
+						<li>How the Internet Works & the Web Development Process</li> 
 					</div> 
 
 					<!-- <div class="projects">
@@ -170,12 +170,23 @@
 			</div>
 			<section class="box weatherTime-div">
 				<div class="weatherAndTime">
-					<div class="time wnt"></div>
-					<div class="location wnt">Location:</div>
-					<div class="currentWeather wnt">Current Weather:</div>
-					<div class="currentTemperature wnt">Current Temperature:</div>
-					<div class="fellsLike wnt">Fells like: </div>
-					<div class="windSpeed wnt">Wind Speed: </div>
+					<div class="wnt">
+						<span class="time"></span>
+					</div>
+					<div class=" wnt">
+						<span class="wnt-data location"></span>
+					</div>
+					<div class="wnt">
+						Current Weather: <span class="wnt-data currentWeather"></span>
+					</div>
+					<div class="wnt">
+						Current Temperature: <span class="wnt-data currentTemperature"></span>&#8451;
+					</div>
+					<div class="wnt">
+						Feels Like: <span class="wnt-data feelsLike"></span>&#8451;
+					</div>
+					<div class="wnt">
+						Wind Speed: <span class="wnt-data windSpeed"></span> miles/hour</div>
 				</div>
 			</section>
 		</div> 
