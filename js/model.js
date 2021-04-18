@@ -18,10 +18,10 @@ export const findAddress = async function (lat, long) {
 		);
 
 		const data = await myAdd.json();
-		console.log(data);
+		// console.log(data);
 		// const location = `${data.data[0].administrative_area}, ${data.data[0].region} ${data.data[0].postal_code}, ${data.data[0].country}`;
-		const location = `${data.display_name}`;
-		console.log(location);
+		const location = `${data.address.city}, ${data.address.state} ${data.address.postcode}, ${data.address.country}`;
+		// console.log(location);
 
 		const locality = data.address.city;
 		// console.log(locality);
@@ -30,6 +30,26 @@ export const findAddress = async function (lat, long) {
 	} catch (err) {
 		console.log(err);
 	}
+};
+
+// get weather info
+export const getWeather = async function (lat, long) {
+	const weatherData = {};
+	const rawData = await fetch(
+		`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=963a52e09ec19ed6b5f8d2f2226bab2f`
+	);
+	const weatherRaw = await rawData.json();
+	// console.log(weatherRaw);
+	weatherData.currentWeather = weatherRaw.weather[0].description
+		.split(" ")
+		.map((word) => word[0].toUpperCase() + word.slice(1))
+		.join(" ");
+
+	weatherData.currentTemp = (weatherRaw.main.temp - 273.15).toFixed(0);
+	weatherData.feelsLike = (weatherRaw.main.feels_like - 273.15).toFixed(0);
+	weatherData.windSpeed = weatherRaw.wind.speed;
+
+	return weatherData;
 };
 
 // set date and time
