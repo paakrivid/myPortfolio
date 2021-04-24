@@ -96,7 +96,8 @@ export const getTimeAndDay = function () {
 		"December"
 	);
 	const fullDate = `
-		${days[day]}, ${date} ${months[month]} ${year}:: ${hours}:${minutes}:${seconds}`;
+		${days[day]}, ${date} ${months[month]} ${year}
+		${hours}:${minutes}:${seconds}`;
 
 	// setTimeout(getTimeAndDay, 1000);
 
