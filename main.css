@@ -50,7 +50,7 @@ header {
 .intro-text {
 	grid-area: f;
 	margin: 1rem;
-	background-image: url("../img/flower.jpg");
+	background-image: url("./img/flower.jpg");
 	background-size: cover;
 	background-position: bottom;
 	display: flex;
